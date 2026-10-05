@@ -34,11 +34,8 @@ jobs:
           platforms: linux/amd64
           tags: ghcr.io/miltonisblurrd/dugoutiq-api:latest
           provenance: false
-      - name: Make the package public
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Confirm the image can be pulled without credentials
         run: |
-          gh api --method PATCH \
-            -H "Accept: application/vnd.github+json" \
-            "/user/packages/container/dugoutiq-api" \
-            -f visibility=public
+          curl -fsSI \
+            -H "Accept: application/vnd.oci.image.index.v1+json" \
+            https://ghcr.io/v2/miltonisblurrd/dugoutiq-api/manifests/latest

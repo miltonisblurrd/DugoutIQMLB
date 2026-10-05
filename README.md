@@ -10,7 +10,7 @@ DugoutIQ is an engineering portfolio project. It is not affiliated with MLB or a
 
 Frontend: [dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app)
 
-The Next.js app is deployed on Vercel. Search and profile on that site stay empty until the Azure API is deployed and `NEXT_PUBLIC_DUGOUTIQ_API_URL` is set to that API. No database credentials are stored in Vercel.
+The public app is [dugoutiq-nu.vercel.app/players](https://dugoutiq-nu.vercel.app/players). It calls the Azure Container Apps API. No database credentials are stored in Vercel.
 
 ## Overview
 
@@ -119,7 +119,8 @@ Opening a profile is a separate request. If the current season is missing or sta
 - Git and GitHub
 - GitHub Actions for build and test
 - Vercel hosts the frontend at [dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app)
-- Azure App Service and Azure SQL are the chosen backend. They are not provisioned yet.
+- Azure Container Apps hosts the API on the Consumption plan, with a minimum of zero replicas
+- Azure SQL hosts the production database on the free offer
 
 ## Domain Decisions
 
@@ -245,10 +246,11 @@ Not built yet:
 |---|---|
 | Repository | [GitHub](https://github.com/miltonisblurrd/DugoutIQMLB) |
 | Frontend | Vercel, with the project root set to `web` |
-| Backend | Azure App Service, ASP.NET Core only |
-| Production database | Azure SQL |
+| Backend | Azure Container Apps, Consumption plan, minimum replicas 0 |
+| API | [dugoutiq-api.wonderfulsea-ca0d04a2.eastus2.azurecontainerapps.io](https://dugoutiq-api.wonderfulsea-ca0d04a2.eastus2.azurecontainerapps.io) |
+| Production database | Azure SQL free offer, auto-pause when the monthly free allowance is used |
 | Local database | SQL Server 2022 in Docker |
 
-The ASP.NET Core API is not deployed to Vercel. Vercel receives `NEXT_PUBLIC_DUGOUTIQ_API_URL` and no database secrets. That variable is unset until the Azure API URL exists. Azure will read `ConnectionStrings__DugoutIQ` and `Cors__Origins__0` from application settings. The schema is the EF migration `20260929200100_InitialCreate`, applied deliberately rather than on every process start.
+The ASP.NET Core API is not deployed to Vercel. Vercel has `NEXT_PUBLIC_DUGOUTIQ_API_URL` and no database secrets. The API reads `ConnectionStrings__DugoutIQ` from a Container Apps secret and allows CORS only for `https://dugoutiq-nu.vercel.app`. The schema is the EF migration `20260929200100_InitialCreate`, applied once rather than on every process start.
 
-The frontend production URL is [https://dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app). Azure App Service and Azure SQL are not provisioned yet.
+The first request after idle can be slow because the API scales to zero. App Service F1 was not available on this subscription, so the API runs on Container Apps Consumption instead.
