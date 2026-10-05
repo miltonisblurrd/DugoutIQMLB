@@ -21,6 +21,7 @@ jobs:
 
   frontend:
     name: Next.js lint, types, and build
+    needs: backend
     runs-on: ubuntu-24.04
     defaults:
       run:
