@@ -1,0 +1,14 @@
+{
+  "copyright": "Captured fixture. Not a live request.",
+  "teams": [
+    {
+      "id": 147,
+      "name": "New York Yankees",
+      "abbreviation": "NYY",
+      "teamName": "Yankees",
+      "league": { "id": 103, "name": "American League" },
+      "division": { "id": 201, "name": "American League East" },
+      "venue": { "name": "Yankee Stadium" }
+    }
+  ]
+}

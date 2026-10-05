@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DugoutIQ.Api/DugoutIQ.Api.csproj" />
+    <Project Path="src/DugoutIQ.Application/DugoutIQ.Application.csproj" />
+    <Project Path="src/DugoutIQ.Domain/DugoutIQ.Domain.csproj" />
+    <Project Path="src/DugoutIQ.Infrastructure/DugoutIQ.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DugoutIQ.IntegrationTests/DugoutIQ.IntegrationTests.csproj" />
+    <Project Path="tests/DugoutIQ.UnitTests/DugoutIQ.UnitTests.csproj" />
+  </Folder>
+</Solution>

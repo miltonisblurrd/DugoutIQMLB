@@ -1,0 +1,60 @@
+{
+  "copyright": "Captured-shape fixture. Not a live request.",
+  "stats": [
+    {
+      "splits": [
+        {
+          "season": "2026",
+          "gameType": "S",
+          "stat": {
+            "gamesPlayed": 10,
+            "plateAppearances": 20,
+            "atBats": 18,
+            "hits": 9,
+            "doubles": 1,
+            "triples": 0,
+            "homeRuns": 2,
+            "baseOnBalls": 2,
+            "strikeOuts": 4,
+            "hitByPitch": 0,
+            "sacFlies": 0
+          }
+        },
+        {
+          "season": "2026",
+          "gameType": "R",
+          "stat": {
+            "gamesPlayed": 40,
+            "plateAppearances": 180,
+            "atBats": 150,
+            "hits": 40,
+            "doubles": 8,
+            "triples": 1,
+            "homeRuns": 12,
+            "baseOnBalls": 25,
+            "strikeOuts": 50,
+            "hitByPitch": 2,
+            "sacFlies": 1
+          }
+        },
+        {
+          "season": "2026",
+          "gameType": "R",
+          "stat": {
+            "gamesPlayed": 26,
+            "plateAppearances": 105,
+            "atBats": 87,
+            "hits": 17,
+            "doubles": 2,
+            "triples": 0,
+            "homeRuns": 6,
+            "baseOnBalls": 18,
+            "strikeOuts": 35,
+            "hitByPitch": 0,
+            "sacFlies": 0
+          }
+        }
+      ]
+    }
+  ]
+}

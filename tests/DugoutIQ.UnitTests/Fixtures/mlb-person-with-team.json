@@ -1,0 +1,19 @@
+{
+  "copyright": "Captured fixture. Not a live request.",
+  "people": [
+    {
+      "id": 592450,
+      "firstName": "Aaron",
+      "lastName": "Judge",
+      "birthDate": "1992-04-26",
+      "isPlayer": true,
+      "currentTeam": {
+        "id": 147,
+        "name": "New York Yankees"
+      },
+      "primaryPosition": { "abbreviation": "RF" },
+      "batSide": { "code": "R" },
+      "pitchHand": { "code": "R" }
+    }
+  ]
+}

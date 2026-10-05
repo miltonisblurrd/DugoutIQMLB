@@ -1,0 +1,27 @@
+# .NET
+bin/
+obj/
+.vs/
+.idea/
+*.user
+*.suo
+TestResults/
+
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+
+# Node and Next.js
+node_modules/
+.next/
+
+# Logs, databases, and OS files
+*.log
+*.mdf
+*.ldf
+.DS_Store
+
+# Local chat export. It can contain credentials and machine paths.
+cursor-chats-export.md

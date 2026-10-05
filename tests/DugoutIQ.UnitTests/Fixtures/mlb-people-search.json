@@ -1,0 +1,30 @@
+{
+  "copyright": "Copyright 2026 MLB Advanced Media, L.P. Captured fixture for DugoutIQ mapping tests. Not a live request.",
+  "people": [
+    {
+      "id": 592450,
+      "fullName": "Aaron Judge",
+      "firstName": "Aaron",
+      "lastName": "Judge",
+      "birthDate": "1992-04-26",
+      "isPlayer": true,
+      "primaryPosition": {
+        "code": "9",
+        "name": "Outfielder",
+        "abbreviation": "RF"
+      },
+      "batSide": { "code": "R", "description": "Right" },
+      "pitchHand": { "code": "R", "description": "Right" },
+      "nickName": "Baj"
+    },
+    {
+      "id": 999001,
+      "firstName": "Not",
+      "lastName": "APlayer",
+      "isPlayer": false,
+      "primaryPosition": { "abbreviation": "CF" },
+      "batSide": { "code": "L" },
+      "pitchHand": { "code": "L" }
+    }
+  ]
+}
