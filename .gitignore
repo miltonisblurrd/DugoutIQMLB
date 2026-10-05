@@ -25,3 +25,4 @@ node_modules/
 
 # Local chat export. It can contain credentials and machine paths.
 cursor-chats-export.md
+.vercel

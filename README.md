@@ -8,7 +8,9 @@ DugoutIQ is an engineering portfolio project. It is not affiliated with MLB or a
 
 ## Live Demo
 
-The public site is not deployed yet. This section will be updated with the real Vercel URL after that deployment succeeds.
+Frontend: [dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app)
+
+The Next.js app is deployed on Vercel. Search and profile on that site stay empty until the Azure API is deployed and `NEXT_PUBLIC_DUGOUTIQ_API_URL` is set to that API. No database credentials are stored in Vercel.
 
 ## Overview
 
@@ -116,7 +118,8 @@ Opening a profile is a separate request. If the current season is missing or sta
 - Docker, for local SQL Server 2022
 - Git and GitHub
 - GitHub Actions for build and test
-- Vercel and Azure are the chosen deployment targets. They are not live yet.
+- Vercel hosts the frontend at [dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app)
+- Azure App Service and Azure SQL are the chosen backend. They are not provisioned yet.
 
 ## Domain Decisions
 
@@ -246,6 +249,6 @@ Not built yet:
 | Production database | Azure SQL |
 | Local database | SQL Server 2022 in Docker |
 
-The ASP.NET Core API is not deployed to Vercel. Vercel receives `NEXT_PUBLIC_DUGOUTIQ_API_URL` and no database secrets. Azure reads `ConnectionStrings__DugoutIQ` and `Cors__Origins__0` from application settings. The schema is the EF migration `20260929200100_InitialCreate`, applied deliberately rather than on every process start.
+The ASP.NET Core API is not deployed to Vercel. Vercel receives `NEXT_PUBLIC_DUGOUTIQ_API_URL` and no database secrets. That variable is unset until the Azure API URL exists. Azure will read `ConnectionStrings__DugoutIQ` and `Cors__Origins__0` from application settings. The schema is the EF migration `20260929200100_InitialCreate`, applied deliberately rather than on every process start.
 
-Vercel and Azure are not provisioned yet.
+The frontend production URL is [https://dugoutiq-nu.vercel.app](https://dugoutiq-nu.vercel.app). Azure App Service and Azure SQL are not provisioned yet.

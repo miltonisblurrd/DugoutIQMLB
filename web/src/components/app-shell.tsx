@@ -51,9 +51,11 @@ export function AppShell({ children }: { children: ReactNode }) {
               </span>
               <span className="mt-1 block text-sm leading-5 text-white">Baseball Operations intelligence</span>
             </Link>
-            <p className="mt-3 px-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--sidebar-muted)]">
-              Development build
-            </p>
+            {process.env.NODE_ENV !== "production" ? (
+              <p className="mt-3 px-2 text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--sidebar-muted)]">
+                Development build
+              </p>
+            ) : null}
             <nav aria-label="Primary" className="mt-8">
               <ul className="space-y-1">
                 <li>
